@@ -4,19 +4,19 @@ import Header from "./components/header/Header";
 import ImageList from "./components/listitems/ImageList";
 import axios from "axios";
 
-const LOAD_STATE = {
-  SUCCESS: "SUCCESS",
-  ERROR: "ERROR",
-  LOADING: "LOADING"
-};
-
 class App extends Component {
   state = {
     photos: [],
-    totalPhotos: 0,
-    perPage: 5,
-    currentPage: 1,
-    loadState: LOAD_STATE.LOADING
+    showModal: false
+  };
+
+  handleOpenModal = () => {
+    console.log("clicked");
+    this.setState({ showModal: true });
+  };
+
+  handleCloseModal = () => {
+    this.setState({ showModal: false });
   };
 
   onSearchSubmit = async term => {
@@ -34,7 +34,12 @@ class App extends Component {
     return (
       <React.Fragment>
         <Header userSubmit={this.onSearchSubmit} />
-        <ImageList images={this.state.photos} />
+        <ImageList
+          images={this.state.photos}
+          showModal={this.state.showModal}
+          onOpenModal={this.handleOpenModal}
+          onCloseModal={this.handleCloseModal}
+        />
         <Footer />
       </React.Fragment>
     );

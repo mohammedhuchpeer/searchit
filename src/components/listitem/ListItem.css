@@ -114,8 +114,6 @@ button.lightbox-close:after {
 }
 
 button {
-  position: relative;
-  margin-top: 250px;
   top: 42%;
   left: 495px;
   list-style: none;
@@ -125,5 +123,37 @@ button {
   width: 150px;
   height: 35px;
   padding: 5px;
-  margin-left: 25px;
+  margin-left: 38px;
+}
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  padding: 2em;
+  color: #f00;
+  background-color: #fff;
+  border-radius: 1em;
+  transform: translate(-50%, -50%);
+  outline: transparent;
+  transition: .25s ease-in-out;
+}
+.Overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color:transparent;
+}
+
+.modal-picture {
+  width: 420px;
+  height: 420px;
+  border: 1px solid white;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
 }
